@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <functional>
+using namespace std;
+
+bool compare(int a, int b) {
+	return a > b;
+}
+int main(void)
+{
+	int N;
+	int i, tmp;
+	priority_queue < int, vector<int>, function<bool(int,int)> > pq(compare);
+
+	cin.tie(NULL); 
+	ios::sync_with_stdio(false);
+
+	cin >> N;
+	for (i = 0; i < N; i++) {
+		cin >> tmp;
+		if (tmp == 0) {
+			// pop
+			if (pq.empty()) {
+				cout << "0\n";
+			}
+			else {
+				cout << pq.top() << "\n";
+				pq.pop();
+			}
+		}
+		else {
+			pq.push(tmp);
+		}
+	}
+	return 0;
+}
+
