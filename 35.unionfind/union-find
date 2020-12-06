@@ -1,0 +1,15 @@
+Uion-Find
+: Disjoint Set (서로소집합)
+: Merge Find Set (병합찾기집합)
+
+	- 여러 서로소집합의 정보를 갖고있는 자료구조
+	- 집합의 root 정보를 저장하여 서로소집합인지 구분함
+	- 필요 변수 : root 번호 저장할 parent[] -> 초기화 : 내가 나의 root인걸로
+	- 함수
+	  1) union : x와 y를 합침 (연결함)
+		x = find(x)
+		y = find(y)
+	  2) find : x의 root를 찾음	
+		if ( x == parent[x] ) ...
+		else { p = find(parent[x]); parent[x] = p; ... } 
+	
